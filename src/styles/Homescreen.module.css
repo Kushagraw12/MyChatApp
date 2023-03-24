@@ -1,0 +1,67 @@
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    height: 73vh;
+    margin-bottom: 5rem;
+    overflow-y: scroll;
+    min-width: 70%;
+    border: 1px solid #000;
+}
+
+.message {
+    border: 0px;
+    border-radius: 20%;
+    padding: 2px;
+}
+
+.messageText {
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: fit-content;
+    max-height: fit-content;
+    border-radius: 5%;
+}
+
+.sent {
+    background-color: rgb(103, 103, 214);
+    float: right;
+    margin-right: 5px;
+}
+
+.received {
+    background-color: rgb(218, 218, 38);
+    float: left;
+    margin-left: 5px;
+}
+
+.form {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    position: absolute;
+    margin-top: 75vh;
+    margin-bottom: 1rem;
+    padding: 2px;
+    min-width: 60%;
+}
+
+.mesInput {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    font-weight: 400;
+    min-height: 15px;
+    min-width: 70%;
+}
+
+.sendBtn {
+    min-width: 25%;
+    margin: auto;
+    margin: 10px;
+    background-color: transparent;
+    border: 1px solid #000;
+    font-family: 'Courier New', Courier, monospace;    
+    font-size: medium;
+    font-weight: 400;
+    min-height: 15px;
+}
