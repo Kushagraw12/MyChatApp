@@ -32,12 +32,21 @@ export default function SignUp() {
       alert("One or more fields are empty!");
       return;
     }
+    if (pass.length < 6) {
+      alert(
+        "Password too short. Password length should be minimum6 characters!"
+      );
+      return;
+    }
     let { data, error } = await supabase.auth.signUp({
       email: em,
       password: pass,
       name: name,
     });
-    console.log(data);
+    if (error) {
+      alert(error);
+      return;
+    }
     setIsOpen(true);
   }
 
