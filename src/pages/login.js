@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Header from "../components/header";
 import styles from "@/styles/login.module.css";
-import Image from "next/Image";
 import {
   MDBContainer,
   MDBCol,

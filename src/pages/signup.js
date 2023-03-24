@@ -1,7 +1,7 @@
 import { supabase } from "../api";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/Link";
+import Link from "next/link";
 import Modal from "react-modal";
 import Header from "@/components/header";
 import styles from "@/styles/signup.module.css";
