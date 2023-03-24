@@ -25,7 +25,7 @@ export default function Header() {
         <Navbar>
           <div className={styles.main}>
             <NavbarBrand href="/" className={styles.brand}>
-              Chat App
+              My Chat App
             </NavbarBrand>
             <button onClick={() => signOut()} className={styles.signoutBtn}>
               {txt}

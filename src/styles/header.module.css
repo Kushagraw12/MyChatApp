@@ -6,6 +6,8 @@
     padding-top: 3px;
     padding-bottom: 3px;
     font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: #000;
 }
 
 .brand{
