@@ -103,6 +103,9 @@
     font-size: large;
 }
 
+.confBtn:hover, .haveAcc:hover {
+    cursor: pointer;
+}
 
 .modalText {
     font-family: 'Courier New', Courier, monospace;
@@ -143,4 +146,8 @@
     min-width: 100px;
     margin-right: 40%;
     float: right;
+}
+
+.loginBtn:hover, .close:hover {
+    cursor: pointer;
 }

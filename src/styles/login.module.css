@@ -72,6 +72,10 @@
   min-width: 100px;
 }
 
+.loginBtn:hover, .forgotPas:hover, .create:hover {
+  cursor: pointer;
+}
+
 .forgotPas {
   font-family: 'Courier New', Courier, monospace;
   font-size: medium;
