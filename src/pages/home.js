@@ -45,17 +45,6 @@ export default function Homescreen() {
   useEffect(() => {
     getData();
 
-    const myChannel = supabase
-      .channel("any")
-      .on("postgres_changes", { event: "*", schema: "*" }, (payload) => {
-        console.log("Change received!", payload.new);
-        setData(data.concat(payload.new));
-      })
-      .subscribe();
-    // return () => {
-    //   supabase.removeChannel(myChannel);
-    // };
-
     scrollToBottom();
     const userid_from_local = localStorage.getItem("supabase_user_id");
     const userem_from_local = localStorage.getItem("supabase_user_email");
@@ -65,7 +54,29 @@ export default function Homescreen() {
       setUserEm(userem_from_local);
       setUserId(userid_from_local);
     }
-  }, [router, data]);
+
+    const myChannel = supabase
+      .channel("realtime messages")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "messages" },
+        (payload) => {
+          console.log("Change received!", payload.new);
+          setData(data.concat(payload.new));
+        }
+      )
+      .subscribe();
+    const myChannel2 = supabase
+      .channel("realtime_messages")
+      .on("postgres_changes", { event: "supa" }, (payload) => {
+        console.log("Change received!", payload.new);
+        // setData(data.concat(payload.new));
+      })
+      .subscribe();
+    return () => {
+      supabase.removeChannel(myChannel);
+    };
+  }, [router, data, setData]);
 
   async function createNewMessage() {
     if (message == "") {
